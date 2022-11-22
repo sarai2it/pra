@@ -1,0 +1,46 @@
+Recursive
+
+def rec_fibonacci(n):
+    if(n<=1):
+        return n
+    else:
+        return rec_fibonacci(n-1) + rec_fibonacci(n-2)
+        
+n=int(input("enter the number: "))
+if(n<=0):
+    print('please enter +ve integer')
+else:
+    print('The fibonacci series is: ')
+    for i in range(n):
+        print(rec_fibonacci(i),end=" ")
+        
+        
+Non-recursive
+
+def non_fibonacci(n):
+    
+    a=0; b=1;
+    c=a+b
+    
+    if(n==0):
+        print("Please enter +ve integer value")
+    elif(n==1):
+        print(a)
+    elif(n==2):
+        print(a,end=" ")
+        print(b,end=" ")
+    elif(n>2):
+        print(a,end=" ")
+        print(b,end=" ")
+        print(c,end=" ")
+        for i in range(3,n):
+            a=b
+            b=c
+            c=a+b      
+            print(c,end=" ")
+
+            
+n=int(input("Enter the number to generate number of fibonacci numbers in the series: "))
+if(n>=1):
+    print('The fibonacci series is: ')
+non_fibonacci(n)
